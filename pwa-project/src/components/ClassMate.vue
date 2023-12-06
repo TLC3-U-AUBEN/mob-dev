@@ -7,12 +7,14 @@
         <th>Prénoms</th>
         <th>Date d'anniversaire</th>
         <th>Genre</th>
+        <th>Conctact</th>
       </tr>
       <tr v-for="student in list" :key="student.id">
         <td>{{ student.lastname }}</td>
         <td>{{ student.firstname }}</td>
         <td>{{ student.birthdate }}</td>
         <td>{{ student.gender }}</td>
+        <td>{{ student.contact }}</td>
       </tr>
     </table>
   </div>
@@ -38,6 +40,7 @@ th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  background-color: #fff
 }
 
 th {
