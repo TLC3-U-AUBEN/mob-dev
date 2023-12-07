@@ -3,6 +3,10 @@
    <p> Rechercher</p>
     <input type="text" v-model="searchTerm" placeholder="search...">
     <button @click="Search">Rechercher </button>
+    <ul>
+      <li v-for="result in searchResults" :key="result.name">{{ result.phonenumber }}</li>
+    </ul>
+
   </div>
 </template>
 
@@ -15,21 +19,15 @@ export default {
   data () {
     return {
       searchTerm: '',
-      resultatsDeRecherche: []
+      resultatsDeRecherche: ['numéro de tél']
     }
   },
   methods: {
-    async search() {
-      try {
-        const response = await axios.get(/api/recherche?term=${this.searchTerm});
-        this.resultatsDeRecherche = response.data;
-      } catch (error) {
-        console.error('Erreur lors de la recherche', error);
-      }
+    rechercher () {
+      this.$emit('to-search', this.searchTerm)
     }
   }
-};
-
+}
 
 </script>
 

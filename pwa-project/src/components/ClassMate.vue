@@ -7,12 +7,14 @@
         <th>Prénoms</th>
         <th>Date d'anniversaire</th>
         <th>Genre</th>
+        <th>Numéro de tél</th>
       </tr>
       <tr v-for="student in list" :key="student.id">
         <td>{{ student.lastname }}</td>
         <td>{{ student.firstname }}</td>
         <td>{{ student.birthdate }}</td>
         <td>{{ student.gender }}</td>
+        <td>{{ student.phonenumber }}</td>
       </tr>
     </table>
   </div>

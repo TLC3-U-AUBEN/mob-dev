@@ -3,9 +3,6 @@
     <div>
       <ContactPicker @to-search="search"></ContactPicker>
     </div>
-    <div>
-      <AffichageListe @to-notify="notify"></AffichageListe>
-    </div>
     <ClassMate :list="studentList"></ClassMate>
 
   </div>
@@ -14,14 +11,12 @@
 <script>
 import ClassMate from '@/components/ClassMate.vue'
 import ContactPicker from '@/components/ContactPicker.vue'
-import AffichageListe from '@/components/AffichageListe.vue'
 
 export default {
   name: 'ClassListView',
   components: {
     ClassMate,
-    ContactPicker,
-    AffichageListe
+    ContactPicker
   },
   data () {
     return {
@@ -31,56 +26,56 @@ export default {
           firstname: 'Abakar',
           birthdate: '22',
           gender: 'M',
-          number: '67656860'
+          phonenumber: '67656860'
         },
         {
           lastname: 'COULIBALY',
           firstname: 'Zanga ROMMEL',
           birthdate: '22',
           gender: 'M',
-          number: '67656861'
+          phonenumber: '67656861'
         },
         {
           lastname: 'DA',
           firstname: 'Sylviane Yeri Debora',
           birthdate: '22',
           gender: 'F',
-          number: '67656862'
+          phonenumber: '67656862'
         },
         {
           lastname: 'KIENTEGA',
           firstname: 'Wendemi Christian',
           birthdate: '23',
           gender: 'M',
-          number: '67656863'
+          phonenumber: '67656863'
         },
         {
           lastname: 'KIRAKOYA',
           firstname: 'Mohamed',
           birthdate: '23',
           gender: 'M',
-          number: '67656864'
+          phonenumber: '67656864'
         },
         {
           lastname: 'SALGO',
           firstname: 'Latifata',
           birthdate: '22',
           gender: 'F',
-          number: '67656865'
+          phonenumber: '67656865'
         },
         {
           lastname: 'SENI',
           firstname: 'Stephane Ulrich',
           birthdate: '22',
           gender: 'M',
-          number: '67656866'
+          phonenumber: '67656866'
         },
         {
           lastname: 'SIAMBO',
           firstname: 'Ivan Eude',
           birthdate: '21',
           gender: 'M',
-          number: '67656867'
+          phonenumber: '67656867'
         }
       ]
     }
@@ -88,9 +83,11 @@ export default {
   methods: {
     search (val) {
       console.log(val)
+    },
+    find (val) {
+      console.log(val)
     }
   }
-
 }
 
 </script>
