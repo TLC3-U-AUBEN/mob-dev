@@ -1,18 +1,19 @@
 <template>
   <div>
-    <ClassMate :list="studentList">
-
-    </ClassMate>
+    <ContactPicker @search="search"></ContactPicker>
+    <ClassMate :list="filteredList.length > 0 ? filteredList : studentList "></ClassMate>
   </div>
 </template>
 
 <script>
 import ClassMate from '@/components/ClassMate.vue'
+import ContactPicker from '@/components/ContactPicker.vue'
 
 export default {
   name: 'ClassListView',
   components: {
-    ClassMate
+    ClassMate,
+    ContactPicker
   },
   data () {
     return {
@@ -65,8 +66,20 @@ export default {
           birthdate: '21',
           gender: 'M'
         }
-      ]
+      ],
+      filteredList: []
     }
+  },
+  methods: {
+    search (val) {
+      console.log(val)
+      // Filtrer les étudiants en fonction de la recherche
+      this.filteredList = this.studentsList.filter(student =>
+        student.lastname.toLowerCase().includes(val.toLowerCase()) ||
+        student.firstname.toLowerCase().includes(val.toLowerCase())
+      )
+    }
+
   }
 
 }
