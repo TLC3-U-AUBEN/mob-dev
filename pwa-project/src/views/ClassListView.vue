@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <ContactPicker @to-search="search"></ContactPicker>
+    </div>
     <ClassMate :list="studentList">
 
     </ClassMate>
@@ -8,11 +11,12 @@
 
 <script>
 import ClassMate from '@/components/ClassMate.vue'
-
+import ContactPicker from '@/components/ContactPicker.vue'
 export default {
   name: 'ClassListView',
   components: {
-    ClassMate
+    ClassMate,
+    ContactPicker
   },
   data () {
     return {
@@ -67,8 +71,12 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    search (val) {
+      console.log(val)
+    }
   }
-
 }
 
 </script>

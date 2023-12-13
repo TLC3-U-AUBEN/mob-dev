@@ -23,6 +23,11 @@ export default {
   name: 'ClassMate',
   props: {
     list: Array
+  },
+  data () {
+    return {
+      nameSeached: ''
+    }
   }
 }
 </script>
